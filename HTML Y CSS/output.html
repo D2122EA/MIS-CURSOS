@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function iniciar() {
+            edad = document.getElementById("miedad");
+            edad.addEventListener("change", cambiarrango, false)
+        }
+        function cambiarrango() {
+            var salida = document.getElementById("rango");
+            var calc = edad.value - 20;
+            if (calc < 20) {
+                calc = 0;
+                edad.value = 20;
+            }
+            salida.innerHTML = calc + 'a' + edad.value;
+        }
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+
+<body>
+    <form name="informacion" method="get">
+        Usuario
+        <input name="usuario" id="usuario" maxlength="10" pattern="[A-Za-z{3,}]" required>
+        <br><br>
+        Email
+        <input type="email" name="miemail" id="miemail" required>
+        <br><br>
+        Rango de edad
+        <input type="range" name="miedad" id="miedad" min="0" max="80" step="20" value="20">
+        <output id="rango">0 a 20</output>
+        <br><br>
+        <input type="button" id="enviar" value="ingresar">
+    </form>
+</body>
+
+</html>

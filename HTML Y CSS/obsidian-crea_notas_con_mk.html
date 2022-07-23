@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function mostraralerta(){
+            alert("hizo clic");
+        }
+        function hacerclic(){
+            var elemento=document.getElementsByTagName('p')[0];
+            elemento.addEventListener('click',mostraralerta,false);
+        }
+        window.addEventListener('load',hacerclic,false)
+    </script>
+</head>
+<body>
+    <p>Hello world</p>
+    <section id="video_publicitario 0">
+        <video src="daftpunk.mp4" controls>
+
+        </video>
+    </section>
+    <section id="video_publicitario">
+        <video src="daftpunk.mp4" preload controls loop poster="patron.png">
+
+        </video>
+    </section>
+
+    <section id="video_publicitario1">
+        <p>Welcome to new world</p>
+        <video id="medio" width="720" height="400" controls>
+            <source src="daftpunk.mp4">
+        </video>
+    </section>
+
+    
+</body>
+</html>

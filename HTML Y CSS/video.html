@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div style="text-align:center">
+    <button onclick="playPause()">Play/Pause</button>
+    <button onclick="makeBig()">Grande</button>
+    <button onclick="makeSmall()">Pequeño</button>
+    <button onclick="makeNormal()">Normal</button>
+    <br>
+    <video id="video1" width="420">
+        <source src="daftpunk.mp4" type="video/mp4">
+        <!-- Si mi video no es compatible con el navegador aparecera el siguiente mensaje -->
+        Tu navegador no soporta HTML5 video.
+    </video>
+    <script>
+        var myVideo = document.getElementById("video1");
+
+        function playPause(){
+            if(myVideo.paused)
+                myVideo.play();
+            else
+                myVideo.pause();
+        }
+        function makeBig(){
+            myVideo.width = 560;
+        }
+        function makeSmall(){
+            myVideo.width = 320;
+        }
+        function makeNormal(){
+            myVideo.width = 420;
+        }
+
+    </script>
+</div>
+</body>
+</html>

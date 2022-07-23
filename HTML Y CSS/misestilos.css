@@ -1,0 +1,52 @@
+#subtitulos {
+  font-size: 70;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: blueviolet;
+}
+p[name*="Notion"] {
+  background-color: rgb(181, 15, 214, 1);
+}
+p[name*="Evernote"] {
+  background-color: aqua;
+}
+p[name$="and"] {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+p[name^="No"] {
+  font-size: large;
+}
+p:nth-child(3) {
+  background-color: brown;
+}
+#list :nth-child(1) {
+  background-color: blue;
+}
+body :not(p) {
+  color: yellow;
+}
+#list :first-child {
+  text-shadow: pink 0 2px;
+}
+#list :last-child {
+  text-shadow: blue 0 2px;
+}
+#list1 :only-child {
+  text-shadow: red 0 2px;
+  color: yellowgreen;
+}
+aside > #list2 > p.tipo1 {
+  text-shadow: red 0 2px;
+  color: rgb(0, 0, 0);
+}
+aside > #list2 > p.tipo1 + p {
+  background-color: aqua;
+}
+#tabla1 tr:nth-child(odd) {
+  background-color: blue;
+}
+#table1 tr:nth-child(even) {
+  background-color: yellowgreen;
+}
+td.name1 ~ td {
+  background-color: yellowgreen;
+}
