@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var suma=0;
+        var valores=0;
+        do{
+            suma=suma+parseInt(valores);
+            valores=prompt("Ingresa el valor: ",);
+        }while(valores!=9999);
+        if(suma>0){
+            document.write("La suma de valores es mayor a 0 y es: ",suma);
+        }
+        else{
+            if(suma<0){
+                document.write("La suma de valores es menor a 0 y es: ",suma);
+            }
+            else{
+                document.write("La suma de valores es igual a 0 ",);
+            }
+        }
+        
+    </script>
+</body>
+</html>

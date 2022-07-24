@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function promedio(valor1, valor2, valor3){
+        var sumatoria= parseInt(valor1)+parseInt(valor2)+parseInt(valor3);
+        var promedio = sumatoria/3;
+        return promedio;
+    }
+    var valor1,valor2,valor3;
+    valor1=prompt("Indique el primer valor: ",);
+    valor2=prompt("Indique el segundo valor: ",);
+    valor3=prompt("Indique el tercer valor: ",);
+    document.write("El promedio es: "+promedio(valor1, valor2, valor3));
+</script>    
+</body>
+</html>

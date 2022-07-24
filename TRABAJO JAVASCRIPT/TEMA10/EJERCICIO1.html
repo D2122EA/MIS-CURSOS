@@ -1,0 +1,21 @@
+<html>
+
+<head></head>
+
+<body>
+    <script language="JavaScript">
+        function verificarEntrada(control) {
+            if (control.value.length<7||control.value.length>20)
+                alert('Datos incorrectos');
+        }
+    </script>
+    <form name="form1">
+        Ingrese su nombre:
+        <input type="text" name="nombre"><br>
+        Ingrese su contraseña:
+        <input type="password" name="contraseña" onBlur="verificarEntrada(this)"><br>
+        <input type="button" value="Confirmar">
+    </form>
+</body>
+
+</html>

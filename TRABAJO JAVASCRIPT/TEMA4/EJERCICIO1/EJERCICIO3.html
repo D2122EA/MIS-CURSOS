@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var estado;
+        var total=0;
+        do{
+            var numcuenta=prompt("Indique su numero de la cuenta: ",);
+            var nombre=prompt("Indique su nombre de el cliente: ",);
+            var saldo=prompt("Indique su saldo de la cuenta: ",);
+            var cancelar = prompt("para cerrar el registro presione 0: ",)
+            if(saldo>0){
+                estado="Acreedor";
+                total=total+parseInt(saldo);
+            }
+            else{
+                if(saldo<0){
+                    estado="Deudor";
+                }
+                else{
+                    estado="Nulo";
+                }
+            }
+            document.write("Su numero de cuenta es: ",numcuenta);
+            document.write("<br>Su nombre de cliente es: ",nombre);
+            document.write("<br>Su estado de cuenta es: ",estado);
+        }while(cancelar!=0);
+        document.write("<br>El numero  total de saldos acreedores es: ",total);
+    </script>
+</body>
+</html>

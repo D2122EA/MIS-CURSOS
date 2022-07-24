@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var x;
+    var numero;
+    var negativo=0;
+    var positivo=0;
+    var quince=0;
+    var pares=0;
+    for(x=0;x<=9;x++){
+       numero=prompt("Ingrese el numero",); 
+       if(numero<0){
+        var negativo = negativo+1;
+       }
+       else{
+           var positivo = positivo+1;
+       }
+       // El porcentaje indica el resto
+       if(numero % 15 == 0){
+        var quince =quince+1;
+       }
+       if(numero % 2 == 0){
+        var pares = pares+1;
+       }
+    }
+    document.write("La cantidad de numeros positivos son: ", positivo);
+    document.write("<br>La cantidad de numeros negativos son: ", negativo);
+    document.write("<br>La cantidad de numeros multiplos de 15 son: ", quince);
+    document.write("<br>La cantidad de numeros pares son: ", pares);
+</script>    
+</body>
+</html>

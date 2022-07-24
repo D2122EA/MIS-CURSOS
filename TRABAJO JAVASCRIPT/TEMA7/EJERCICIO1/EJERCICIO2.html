@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //https://www.google.com/search?q=que+es+una+leyenda+en+un+manual+&sxsrf=ALiCzsaXcWRJsaRc5LLWn-nYKVz6OCOxNA%3A1653327125696&ei=FcWLYr2NKquI5OUPhJOJ2AM&ved=0ahUKEwj965jAk_b3AhUrBLkGHYRJAjsQ4dUDCA4&uact=5&oq=que+es+una+leyenda+en+un+manual+&gs_lcp=Cgdnd3Mtd2l6EAMyBwghEAoQoAEyBwghEAoQoAEyBwghEAoQoAEyBwghEAoQoAE6BwgAEEcQsAM6BwgjEOoCECc6BAgjECc6BAgAEEM6CwguEIAEEMcBENEDOggILhCxAxCDAToLCC4QgAQQsQMQ1AI6CAgAEIAEELEDOgoILhCxAxCDARBDOgsIABCABBCxAxCDAToICC4QgAQQsQM6BQguEIAEOgUIABCABDoICAAQgAQQyQM6BggAEB4QFjoFCCEQoAE6CAghEB4QFhAdSgQIQRgASgQIRhgAUNcKWMxBYIlDaARwAXgBgAG1AogBlyCSAQgwLjMxLjAuMZgBAKABAbABCsgBCMABAQ&sclient=gws-wiz
+        var texto= prompt("Ingrese un texto",'');
+        var palabra= prompt("Ingrese la palabra a buscar",'');
+        if(texto.indexOf(palabra)!=-1){
+            document.write("La posicion es: "+texto.indexOf(palabra));
+        }
+        else{
+            document.write("Usted debe ingresar buscar un texto que este dentro del texto que ingreso inicialmente");
+        }
+    </script>    
+</body>
+</html>

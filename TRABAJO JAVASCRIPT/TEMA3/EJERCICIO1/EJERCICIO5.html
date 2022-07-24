@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var antiguedad = prompt("indique sus años de antiguedad: ",);
+        var sueldo = prompt("indique su sueldo: ",);
+        if (sueldo < 500 && antiguedad >= 10) {
+            var aumento = (parseInt(sueldo) + (20 / 100 * sueldo));
+            document.write("Usted recibira un sueldo de: ", aumento);
+        }
+        else {
+            if (sueldo >= 500) {
+                document.write("Usted recibira un sueldo de: ", sueldo);
+            }
+            else {
+                if (sueldo < 500 && antiguedad < 10) {
+                    var aumento = (parseInt(sueldo) + (5 / 100 * sueldo));
+                    document.write("Usted recibira un sueldo de: ", aumento);
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+      var x;
+      var y;
+      var ingresar=prompt("Ingrese el texto: ",);
+      var condicion = (ingresar.length-1)/2+1;
+      for(x=0;x<condicion;x++){
+         var cantidad = ingresar.length - x-1;
+         var contador = ingresar.charAt(cantidad);
+          /*comprobando si es palindromo(cuando llege al valor medio que no vale nada no hara nada
+          y seguira ejecutando los siguientes caracteres)*/
+              if(ingresar.charAt(x)==contador){
+              }
+              else{
+                  document.write("No es un palindromo");
+                  y=2;
+                  x =condicion;
+              }
+      }
+      if(y!=2){
+        document.write("Es un palindromo");
+      }
+  </script>  
+</body>
+</html>

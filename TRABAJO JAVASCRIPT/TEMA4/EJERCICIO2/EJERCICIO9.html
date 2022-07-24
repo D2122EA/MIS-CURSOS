@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var primer;
+        var segundo;
+        var tercero;
+        var x;
+        var equilatero = 0;
+        var isosceles = 0;
+        var escaleno = 0;
+        for (x = 0; x <= 4; x++) {
+            primero = prompt("Indique la longuitud del primer lado: ",);
+            segundo = prompt("Indique la longuitud del segundo lado: ",);
+            tercero = prompt("Indique la longuitud del tercer lado: ",);
+            //conocer que tipo de triangulo es
+            if (primero == segundo && segundo == tercero) {
+                document.write("<br>En un triangulo equilatero");
+                equilatero = equilatero + 1;
+            }
+            else {
+                if (primero == segundo || segundo == tercero) {
+                    document.write("<br>Es un triangulo isosceles")
+                    isosceles = isosceles + 1;
+                }
+                else {
+                    document.write("<br>Es un triangulo escaleno")
+                    escaleno = escaleno + 1;
+                }
+            }
+        }
+        //ver la menor cantidad de triangulo 
+        document.write("<br> Cantidad de triangulos equilateros: ", equilatero);
+        document.write("<br> Cantidad de triangulos isosceles: ", isosceles);
+        document.write("<br> Cantidad de triangulos escalenos: ", escaleno);
+        if (equilatero < isosceles && equilatero < escaleno) {
+            document.write("<br>El triangulo con menor cantidad es:equilatero");
+        }
+        else {
+            if (isosceles < equilatero && isosceles < escaleno) {
+                document.write("<br>El triangulo con menor cantidad es:isosceles");
+
+            }
+            else {
+                if (escaleno < equilatero && escaleno < isosceles) {
+                    document.write("<br>El triangulo con menor cantidad es:escaleno");
+                }
+                else{
+                    document.write("<br>El triangulo con menor cantidad son 2 o ninguno");
+                }
+
+
+            }
+        }
+    </script>
+</body>
+
+</html>

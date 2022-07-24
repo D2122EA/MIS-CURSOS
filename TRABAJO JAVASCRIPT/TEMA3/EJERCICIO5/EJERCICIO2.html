@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var promedio;
+        var persona;
+        var suma=0;
+        var x;
+        for(x=1;x<=5;x++){
+            persona=prompt("Indique la altura de la persona "+x,);
+            suma+=parseInt(persona); //suma=suma+persona
+            if(x==5){
+                promedio=suma/5;
+                document.write("El promedio de las alturas es ", promedio);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <script language="javascript">
+        function mostrar() {
+            // Los forms es una enumeracion por si hay varios formularios en el codigo 
+            var x = document.forms[0].elements.length - 1; /*
+    el -1 es debido que en elements tambien incluye el boton y no vamos a imprimir ello 
+*/
+            for (var y = 0; y < x; y++) {
+                alert(document.forms[0].elements[y].value);
+            }
+        }
+    </script>
+    <form name="form1">
+        Nombre <input type="text" name="nombre"><br>
+        Apellidos <input type="text" name="apellidos"><br>
+        Dirección <input type="text" name="direccion"><br>
+        <input type="submit" value="Haz clic" onclick="mostrar()">
+    </form>
+</body>
+
+</html>

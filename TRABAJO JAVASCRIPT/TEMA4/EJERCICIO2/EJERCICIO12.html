@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        manana = 5
+        tarde = 4
+        noche = 3
+        */
+        var mañana = 4;
+        var tarde = 3;
+        var noche = 2;
+        var x;
+        var y = 0;
+        var sumatorianight = 0;
+        var sumatoriamorning = 0;
+        var sumatoriaafter = 0;
+        for (x = 0; x <= mañana; x++) {
+            var cantmorning = prompt("TURNO MANANA: Indique la edad del alumno",);
+            sumatoriamorning = sumatoriamorning + parseInt(cantmorning);
+            if (x == mañana) {
+                y = -1;
+                var promediomañana = sumatoriamorning / 5;
+            }
+            y = y + 1
+        }
+        x = 0;
+        for (x = 0; x <= tarde; x++) {
+            var cantafter = prompt("TURNO TARDE: Indique la edad del alumno",);
+            sumatoriaafter = sumatoriaafter + parseInt(cantafter);
+            if (x == tarde) {
+                y = -1;
+                var promediotarde = sumatoriaafter / 4;
+            }
+            y = y + 1
+        }
+        x = 0;
+        for (x = 0; x <= noche; x++) {
+            var cantnight = prompt("TURNO NOCHE: Indique la edad del alumno",);
+            sumatorianight = sumatorianight + parseInt(cantnight);
+            if (x == noche) {
+                y = -1;
+                var promedionoche = sumatorianight / 3;
+            }
+            y = y + 1
+        }
+        document.write("<br>PROMEDIO TURNO MAÑANA: ", promediomañana);
+        document.write("<br>PROMEDIO TURNO TARDE: ", promediotarde);
+        document.write("<br>PROMEDIO TURNO NOCHE: ", promedionoche);
+        if (promediomañana > promedionoche && promediomañana > promediotarde) {
+            document.write("<br>El promedio mayor es el promedio de los de turno manana");
+        }
+        else {
+            if (promediotarde > promediomañana && promediotarde > promedionoche) {
+                document.write("<br>El promedio mayor es el promedio de los de turno tarde");
+
+            }
+            else {
+                if (promedionoche > promediomañana && promedionoche > promediotarde) {
+                    document.write("<br>El promedio mayor es el promedio de los de turno noche");
+
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

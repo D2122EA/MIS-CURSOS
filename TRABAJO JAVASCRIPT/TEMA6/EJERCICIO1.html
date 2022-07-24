@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>    
+    var vector=new Array(8);
+    function sumatoria(hola){
+        //sumatoria se debe declarar dentro de la funcion sino no funciona al igual q x
+        var sumatoria=0;
+        var x;
+        for(x=0;x<hola.length;x++){
+            hola[x]=prompt("Indique el valor del vector: ",);
+            sumatoria=sumatoria+parseInt(hola[x]);
+        }
+        return sumatoria;
+    }
+    function mayor36(vector){
+        var x;
+        var mayor36=0;
+        for(x=0;x<vector.length;x++){
+            if(parseInt(vector[x])>36){
+                mayor36=mayor36+parseInt(vector[x]);
+            }
+        }
+        return  mayor36; 
+    }
+    function mayor50(vector){
+        var x;
+        var mayor50=0;
+        for(x=0;x<vector.length;x++){
+            if(parseInt(vector[x])>50){
+                mayor50=mayor50+parseInt(vector[x]);
+            }
+        }
+        return  mayor50; 
+    }
+    //si ponemos sumatoria (vector) antes del document write estarias ingresando 2 veces la info
+    document.write("La sumatoria de los numeros es: "+sumatoria(vector));
+    document.write("<br>Sumatoria de numeros mayores a 50: "+mayor50(vector));
+    document.write("<br>Sumatoria de numeros mayores a 36: "+mayor36(vector));
+    </script>
+</body>
+
+</html>

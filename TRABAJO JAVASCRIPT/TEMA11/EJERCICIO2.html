@@ -1,0 +1,22 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <script language="javascript">var num;
+        function generador() {
+            num = Math.random() * 3; //se guarda en num un valor comprendido entre 0.00001 y 2.99999
+            num = parseInt(num); //guardamos solo la parte entera de la variable num 
+            if (num == 0)
+                window.location = 'https://www.google.com/intl/es-419/gmail/about/'
+            if (num == 1)
+                window.location = 'http://www.hotmail.com'
+            if (num == 2)
+                window.location = 'https://mail.yahoo.com/'
+        }
+    </script>
+    <a href="javascript:generador()">Generador</a>
+</body>
+
+</html>

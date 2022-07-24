@@ -1,0 +1,54 @@
+<body>
+    <script language="JavaScript">
+        function contarSeleccionados() {
+            var cant=[];
+            var devuelve ="";
+            var x=0;
+            var y=0;
+            if(document.form1.deporte1.checked||document.form1.deporte2.checked||document.form1.deporte3.checked){
+            if (document.form1.deporte1.checked)
+              {
+                cant[x]='- Futbol \n';
+                x++
+              }
+            if (document.form1.deporte2.checked)
+              {
+                cant[x]='- Basket \n';
+                x++
+              }  
+            if (document.form1.deporte3.checked)
+              {
+                cant[x]='- Tenis \n';
+                x++
+              }   
+            }
+            else{
+                cant[x]='No esta seleccionado ninguna opcion';
+            }
+            alert(`Los deportes seleccionados son: \n${imprimir()}`);
+            function imprimir(){
+            do
+            {
+                devuelve = cant[y]+devuelve;
+                y++;
+                
+            }
+            while(y<x);
+            return devuelve;
+            }
+        }
+      
+        
+    </script>
+    <form name="form1">
+        <input type="checkbox" name="deporte1">Futbol
+        <br>
+        <input type="checkbox" name="deporte2">Basket
+        <br>
+        <input type="checkbox" name="deporte3">Tenis
+        <br>
+        <input type="button" value="Mostrar" onClick="contarSeleccionados()">
+    </form>
+</body>
+
+</html>

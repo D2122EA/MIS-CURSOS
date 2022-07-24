@@ -1,0 +1,206 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <script language="JavaScript">
+        var total = 0;
+        const procesador = [];
+        const monitor = [];
+        const disco = [];
+        var x = 0;
+        var y = 0;
+        var z = 0;
+        const imprimir = document.createElement('div');
+        function todo() {
+            //procesadores
+            if (document.form1.procesador_tipo1.checked && document.form1.procesador_tipo2.checked) {
+                x = 0;
+                procesador[0] = `
+                Pentium III $400 <br>
+                Pentium IV  $500 <br>
+                `
+                total = total + 900
+            }
+            else {
+                if (document.form1.procesador_tipo1.checked) {
+                    x = 1;
+                    procesador[1] = "Pentium III: " + "$400" + "<br>"
+                    total = total + 400;
+                }
+                else {
+                    if (document.form1.procesador_tipo2.checked) {
+                        x = 2;
+                        procesador[2] = "Pentium IV " + "$500" + "<br>";
+                        total = total + 500;
+                    }
+                    else {
+                        x = 3;
+                        procesador[3] = "";
+                    }
+                }
+            }
+            //monitores
+            if (document.form1.monitor_tipo1.checked && document.form1.monitor_tipo2.checked && document.form1.monitor_tipo3.checked) {
+                y = 0;
+                monitor[0] = `
+                Samsung 14' $250 <br>
+                Samsung 15' $350 <br>
+                Samsung 17' $550 <br>
+                `
+                total = total + 900
+            }
+            else {
+                if (document.form1.monitor_tipo1.checked && document.form1.monitor_tipo2.checked) {
+                    y = 1;
+                    monitor[1] = `
+                Samsung 14' $250 <br>
+                Samsung 15' $350 <br>
+                `;
+                    total = total + 700;
+                }
+                else {
+                    if (document.form1.monitor_tipo2.checked && document.form1.monitor_tipo3.checked) {
+                        y = 2;
+                        monitor[2] = `
+                Samsung 17' $550 <br>
+                Samsung 15' $350 <br>
+                `;
+                        total = total + 900;
+                    }
+                    else {
+                        if (document.form1.monitor_tipo1.checked && document.form1.monitor_tipo3.checked) {
+                            y = 3;
+                            monitor[3] = `
+                Samsung 17' $550 <br>
+                Samsung 14' $250 <br>
+                `;
+                            total = total + 900;
+                        }
+                        else {
+                            if (document.form1.monitor_tipo1.checked) {
+                                y = 4;
+                                monitor[4] = "Samsung 14' " + "$250" + "<br>";
+                                total = total + 250;
+                            } else if (document.form1.monitor_tipo2.checked) {
+                                y = 5
+                                monitor[5] = "Samsung 15'" + "350" + "<br>";
+                                total = total + 350;
+                            }
+                            else {
+                                if (document.form1.monitor_tipo3.checked) {
+                                    y = 6
+                                    monitor[6] = "Samsung 17' " + "$550" + "<br>";
+                                    total = total + 550;
+                                }
+                                else {
+                                    y = 7;
+                                    monitor[7] = "";
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+             //disco duro
+             if (document.form1.disco_duro_tipo1.checked && document.form1.disco_duro_tipo2.checked && document.form1.disco_duro_tipo3.checked) {
+                z = 0;
+                disco[0] = `
+                80Gb $300 <br>
+                240Gb $400 <br>
+                800Gb $500 <br>
+                `
+                total = total + 1200
+            }
+            else {
+                if (document.form1.disco_duro_tipo1.checked && document.form1.disco_duro_tipo2.checked) {
+                    z = 1;
+                    disco[1] = `
+                    80Gb $300 <br>
+                240Gb $400 <br>
+                `;
+                    total = total + 700;
+                }
+                else {
+                    if (document.form1.disco_duro_tipo2.checked && document.form1.disco_duro_tipo3.checked) {
+                        z = 2;
+                        disco[2] = `
+                240Gb $400 <br>
+                800Gb $500 <br>
+                `;
+                        total = total + 900;
+                    }
+                    else {
+                        if (document.form1.disco_duro_tipo1.checked && document.form1.disco_duro_tipo3.checked) {
+                            z = 3;
+                            disco[3] = `
+                            80Gb $300 <br>
+                800Gb $500 <br>
+                `;
+                            total = total + 800;
+                        }
+                        else {
+                            if (document.form1.disco_duro_tipo1.checked) {
+                                z = 4;
+                                disco[4] = `80Gb $300 <br>`
+                                total = total + 300;
+                            } else if (document.form1.disco_duro_tipo2.checked) {
+                                z = 5
+                                disco[5] = `
+                240Gb $400 <br>`;
+                                total = total + 400;
+                            }
+                            else {
+                                if (document.form1.disco_duro_tipo3.checked) {
+                                    z = 6
+                                    disco[6] = `800Gb $500 <br>`;
+                                    total = total + 500;
+                                }
+                                else {
+                                    z = 7;
+                                    disco[7] = "";
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+           
+            document.write("RESUMEN DE COMPRA");
+            imprimir.innerHTML = `<p> ${procesador[x]} ${monitor[y]} ${disco[z]}</p>`;
+            document.body.appendChild(imprimir);
+            document.write("TOTAL DE SU COMPRA $", total);
+        }
+    </script>
+    <form name="form1">
+        PROCESADOR<br>
+        <input type="checkbox" name="procesador_tipo1">Pentium III-$400
+        <br>
+        <input type="checkbox" name="procesador_tipo2">Pentium IV-$500
+        <br>
+        <br>
+        MONITOR<br>
+        <input type="checkbox" name="monitor_tipo1">Samsung 14'-$250
+        <br>
+        <input type="checkbox" name="monitor_tipo2">Samsung 15'-$350
+        <br>
+        <input type="checkbox" name="monitor_tipo3">Samsung 17'-$550
+        <br>
+        <br>
+        DISCO DURO<br>
+        <input type="checkbox" name="disco_duro_tipo1">80 Gb-$300
+        <br>
+        <input type="checkbox" name="disco_duro_tipo2">240 Gb-$400
+        <br>
+        <input type="checkbox" name="disco_duro_tipo3">800 Gb-$500
+        <br>
+        <input type="button" value="Mostrar" onClick="todo()">
+        <br>
+        <br>
+    </form>
+</body>
+
+</html

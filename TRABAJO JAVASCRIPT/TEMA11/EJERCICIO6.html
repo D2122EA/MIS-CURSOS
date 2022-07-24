@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <title>Problema</title>
+    <script language="javascript">
+        function verificar() {
+            var es_edge = navigator.userAgent.toLowerCase().indexOf('edg/');
+            //si el navegador no encuentra lo que queremos buscar devolvera -1
+            if (es_edge > -1) {
+                document.bgColor = '#ff0000';
+            }
+        }
+
+    </script>
+</head>
+
+<body onload="verificar()">
+
+</body>
+
+</html>

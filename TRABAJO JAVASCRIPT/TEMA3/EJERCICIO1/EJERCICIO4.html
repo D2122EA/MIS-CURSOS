@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Cartesian_coordinates_2D.svg/300px-Cartesian_coordinates_2D.svg.png
+        var x = prompt("indique el valor de x: ",);
+        var y = prompt("Indique el valor de y: ",);
+        if (x > 0 && y > 0) {
+            document.write("La coordenada esta en el primer cuadrante");
+        }
+        else {
+            if (x < 0 && y > 0) {
+                document.write("La coordenada esta en el segundo cuadrante");
+            }
+            else {
+                if (x < 0 && y < 0) {
+                    document.write("La coordenada esta en el tercer cuadrante");
+                }
+                else {
+                    if (x > 0 && y < 0) {
+                        document.write("La coordenada esta en el cuarto cuadrante");
+                    }
+                }
+
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var x;
+        var numero;
+        var coordenadax;
+        var coordenaday;
+        var y=1;
+        numero=prompt("Ingrese la cantidad de puntos a ingresar",);
+        for(x=0;x<numero;x++){
+            coordenadax=prompt("Ingrese la coordenada x: ",);
+            coordenaday=prompt("Ingrese la coordenada y: ",);
+            document.write("<br>COORDENADA "+y);
+            if(coordenadax<0 && coordenaday>0){
+                document.write("<br>La coordenada pertenece al primer cuadrante");
+            }
+            else{
+                if(coordenadax>0 && coordenaday>0){
+                    document.write("<br>La coordenada pertenece al segundo cuadrante");
+                }
+                else{
+                    if(coordenadax<0 && coordenaday<0){
+                        document.write("<br>La coordenada pertenece al tercer cuadrante");
+                    }
+                    else{
+                        if(coordenadax>0 && coordenaday<0){
+                            document.write("<br>La coordenada pertenece al cuarto cuadrante");
+                        }
+                        else{
+                            document.write("<br>ERROR: Las entradas ingresadas no son numeros. Intentelo de nuevo");
+                        }
+                    }
+                }
+            }
+            y=y+1
+        }
+    </script>
+</body>
+</html>

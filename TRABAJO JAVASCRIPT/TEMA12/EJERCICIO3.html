@@ -1,0 +1,31 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <script language="javascript">
+        function mostrar() {
+            alert(document.form1.apellidos.value);
+            alert(document.form2.direccion.value);
+        }
+    </script>
+    <hr>
+    <form name="form1">
+        <h2>Formulario 1</h2>
+        Nombre <input type="text" name="nombre"><br>
+        Apellidos <input type="text" name="apellidos"><br>
+        Dirección <input type="text" name="direccion"><br>
+    </form>
+    <hr>
+    <form name="form2">
+        <h2>Formulario 2</h2>
+        Nombre <input type="text" name="nombre"><br>
+        Apellidos <input type="text" name="apellidos"><br>
+        Dirección <input type="text" name="direccion"><br>
+    </form>
+    <hr>
+    <input type="submit" value="Haz clic" onclick="mostrar()">
+</body>
+
+</html>

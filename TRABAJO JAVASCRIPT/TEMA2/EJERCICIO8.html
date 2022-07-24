@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var string = prompt("indique el numero: ",);
+        var numero = parseInt(string);
+        if (numero<10){
+                if(numero>=0){
+                    document.write("el numero  tiene 1 cifra");
+                }
+                else{
+                    document.write("ERROR: El numero no es positivo");
+                }
+                
+        }
+        else{
+                if(numero>=10){
+                    if(numero<100){
+                        document.write("el numero  tiene 2 cifras");
+                    }
+                    else{
+                        if(numero<1000){
+                            document.write("el numero  tiene 3 cifras");
+                        }
+                        else{
+                            document.write("el numero no tiene  1, 2 o 3 cifras");
+                        }
+                    }
+                }
+        }
+    </script>
+</body>
+</html>

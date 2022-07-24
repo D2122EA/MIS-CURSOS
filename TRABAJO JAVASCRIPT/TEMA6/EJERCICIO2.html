@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var vector1=new Array(3);
+    var vector2=new Array(3); 
+    var vector3=new Array(3);
+    function suma(valor1,valor2,valor3){
+        var x; 
+        var y=1;
+        for(x=0;x<valor1.length;x++){
+            valor1[x]=prompt("Indique el valor"+y+"del arreglo 1",);
+            valor2[x]=prompt("Indique el valor"+y+"del arreglo 2",);
+            valor3[x] = parseInt(valor1[x])+parseInt(valor2[x]);
+            y=y+1;
+        }
+    }
+    suma(vector1,vector2,vector3);
+    document.write("Los valores son: ");
+    document.write("<br>"+vector3[0]);
+    document.write("<br>"+vector3[1]);
+    document.write("<br>"+vector3[2]);
+</script>    
+</body>
+</html>

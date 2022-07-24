@@ -1,0 +1,25 @@
+<HTML>
+
+<HEAD>
+</HEAD>
+
+<BODY>
+    <SCRIPT LANGUAGE="JavaScript">
+        function validar() {
+            valor = document.form1.telefono.value;
+            if (!(/^\(\d{3}\)\s\d{6}$/.test(valor))) {
+                alert("Telefono incorrecto")
+                return false;
+            } else {
+                alert("Telefono correcto")
+                return true;
+            }
+        }
+    </SCRIPT>
+    <FORM name="form1">
+        Ingrese un teléfono:<INPUT TYPE="text" NAME="telefono"><br>
+        <INPUT TYPE="submit" VALUE="Enviar" ONCLICK="validar()">
+    </FORM>
+</BODY>
+
+</HTML>

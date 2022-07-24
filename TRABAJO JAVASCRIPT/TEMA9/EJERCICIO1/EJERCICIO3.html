@@ -1,0 +1,55 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <script language="JavaScript">
+        var guardar;
+        var calcular;
+        function iniciar() {
+            cambio = document.getElementById("depende");
+            cambio.addEventListener("change", cambiar, false);
+        }
+        function seleccionar() {
+            document.form1.text1.value = document.form1.select1.options[document.form1.select1.selectedIndex].text;
+        }
+        function cambiar() {
+            var numero = document.form1.select1.selectedIndex;
+            var salida = document.getElementById("cantidad");
+            if(numero==0){
+                multi=6;
+            }
+            if(numero==1){
+                multi=10;
+            }
+            if(numero==2){
+                multi=14;
+            }
+            calcular = cambio.value*multi;
+            salida.innerHTML = 'Precio '+'$ '+ calcular;
+        }
+        function resetear(){
+            var salida = document.getElementById("cantidad");
+            var salida2 = document.getElementById("text1");
+            calcular = 0;
+            salida.innerHTML = 'Precio '+'$ '+ calcular;
+        }
+        window.addEventListener("load",iniciar,false);
+    </script>
+    <form name="form1">
+        ELIJE SU TIPO DE PIZZA<br>
+        <input type="number" min="0" max="100" step="1" value="1" name="depende" id="depende">
+        <select size="1" name="select1" onchange="seleccionar()">
+            <option value="queso">Queso</option>
+            <option value="queso y jamon">Jamon y queso</option>
+            <option value="especial">Especial</option>
+        </select></p>
+        <input type="reset" id="clean"value="borrar" onclick="resetear()"><br><hr>
+        RESUMEN DE PAGO <br>
+        <input type="text" name="text1" id="text1"><br>
+        <output id="cantidad">Precio $ 0</output>
+    </form>
+</body>
+
+</html>

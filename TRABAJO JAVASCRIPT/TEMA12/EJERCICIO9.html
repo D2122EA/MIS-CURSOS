@@ -1,0 +1,24 @@
+<HEAD>
+</HEAD>
+
+<BODY>
+    <SCRIPT LANGUAGE="JavaScript">
+        function isEmailAddress() {
+            var s = document.form1.cuadro1.value;
+            //expresiones regulares
+            var filter = /^[A-Za-z][A-Za-z0-9_]*@[A-Za-z0-9_]+.[A-Za-z0-9_.]+[A-za-z]$/;
+            if (filter.test(s)) {
+                return true;
+            } else {
+                alert("Entre una direccion de correo valida");
+                return false;
+            }
+        }
+    </SCRIPT>
+    <FORM name="form1">
+        <INPUT TYPE="text" name="cuadro1">
+        <INPUT TYPE="submit" VALUE="Ejecutar" ONCLICK="return isEmailAddress()">
+    </FORM>
+</BODY>
+
+</HTML>

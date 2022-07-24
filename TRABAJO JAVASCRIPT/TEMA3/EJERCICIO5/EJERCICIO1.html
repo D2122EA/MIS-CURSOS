@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var mayores=0;
+        var menores=0;
+        var x = 1;
+        while(x<=10){
+            var alumno = prompt("Indique la nota del alumno: ",);
+            if(alumno>=7){
+                mayores=mayores+1;
+            }
+            else{
+                menores=menores+1;
+            }
+            x=x+1;
+        }
+        document.write("Los alumnos con notas mayores o iguales a 7 son:",mayores);
+        document.write("<br>Los alumnos con notas menores a 7 son:",menores);
+    </script>
+</body>
+</html>

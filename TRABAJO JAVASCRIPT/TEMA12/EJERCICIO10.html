@@ -1,0 +1,31 @@
+<HTML>
+
+<HEAD>
+</HEAD>
+
+<BODY>
+    <SCRIPT LANGUAGE="JavaScript">
+        function validar() {
+            valor = document.form1.DNI.value;
+            if (!(/^\d{8}[A-Z]$/.test(valor))) {
+                alert("DNI INTERNACIONAL INCORRECTO")
+            } else {
+                alert("DNI INTERNACIONAL CORRECTO")
+            }
+            //******************************************* 
+            valor1 = document.form1.DNI2.value;
+            if (!(/^\d{11}$/.test(valor1))) {
+                alert("DNI NACIONAL INCORRECTO")
+            } else {
+                alert("DNI NACIONAL CORRECTO")
+            }
+        }
+    </SCRIPT>
+    <FORM name="form1">
+        DNI Internacional:<INPUT TYPE="text" NAME="DNI"><br>
+        DNI Nacional: <INPUT TYPE="text" NAME="DNI2"><br>
+        <INPUT TYPE="submit" VALUE="Enviar" ONCLICK="validar()">
+    </FORM>
+</BODY>
+
+</HTML>

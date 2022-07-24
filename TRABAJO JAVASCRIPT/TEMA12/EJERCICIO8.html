@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <script type="text/javascript">
+        function validacion() {
+            var indice = document.form1.opciones.selectedIndex;
+            if (indice == null || indice == 0) {
+                alert("Debe seleccionar un elemento");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form action="" method="" id="" name="form1" onsubmit="return validacion()">
+        <select id="opciones" name="opciones">
+            <!--los values coinciden con el index pero puede tener cualquier valor-->
+            <option value="">- Selecciona un valor -</option>
+            <option value="1">Primer valor</option>
+            <option value="2">Segundo valor</option>
+            <option value="3">Tercer valor</option>
+        </select>
+        <input type="submit" value="Enviar">
+    </form>
+</body>

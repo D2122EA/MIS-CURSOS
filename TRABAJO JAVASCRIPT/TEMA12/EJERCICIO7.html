@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <script type="text/javascript">
+        function validacion() {
+            //isNaN manda verdadero o falso si un valor es un numero
+            if (isNaN(document.form1.n1.value)) {
+                alert("ERROR en Número 1");
+                return false;
+            }
+            if (isNaN(document.form1.n2.value)) {
+                alert("ERROR en Número 2");
+                return false;
+            }
+            if (isNaN(document.form1.n3.value)) {
+                alert("ERROR en Número 3");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form action="" method="" id="" name="form1" onsubmit="return validacion()"> 
+        Número 1:<input type="text" name="n1"><br>
+        Número 2:<input type="text" name="n2"><br> 
+        Número 3:<input type="text" name="n3"><br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>

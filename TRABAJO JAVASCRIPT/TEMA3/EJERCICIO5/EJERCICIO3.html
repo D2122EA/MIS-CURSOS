@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var bajo = 0;
+        var alto = 0;
+        var x = 1;
+        var empresa = 0;
+        do {
+            var empleado = prompt("Indique el sueldo del empleado: " + x,);
+            if (empleado >= 100 && empleado <= 300) {
+                bajo = bajo + 1;
+                empresa = empresa + parseInt(empleado);
+            }
+            else {
+                if (empleado > 300) {
+                    alto = alto + 1;
+                    empresa = empresa + parseInt(empleado);
+                }
+            }
+            x = x + 1;
+        } while (x <= 5);
+        document.write("La cantidad de empleados que ganan entre 100 y 300 es: ", bajo);
+        document.write("<br>La cantidad de empleados que ganan mas de 300 es: ", alto);
+        document.write("<br> La empresa gasto: ", empresa);
+
+    </script>
+</body>
+
+</html>

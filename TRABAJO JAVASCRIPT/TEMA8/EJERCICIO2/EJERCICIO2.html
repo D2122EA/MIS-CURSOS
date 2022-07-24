@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script language="JavaScript">
+        function mayor() {
+            var nom = document.formulario.nombre.value;
+            var nom1 = document.formulario.nombre1.value;
+            if(nom>nom1){
+                alert('EL MAYOR VALOR ES: El valor 1 que es: ' + nom);
+            }
+            else{
+                alert('EL MAYOR VALOR ES: El valor 2 que es: ' + nom1);
+            }
+        }
+    </script>
+    <form name="formulario">
+        Ingrese su valor 1:
+        <input type="text" name="nombre"><br>
+        Ingrese su valor 2:
+        <input type="text" name="nombre1"><br>
+        <input type="button" value="Enviar" onClick="mayor()">
+    </form>
+</body>
+
+</html>

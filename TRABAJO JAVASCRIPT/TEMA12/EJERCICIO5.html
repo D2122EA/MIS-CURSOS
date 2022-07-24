@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <script type="text/javascript">
+        function validacion() {
+            valor = document.form1.nombre.value;
+            //Damos 3 posibilidades en caso que alguna no sea compatible con ellos
+            if (valor == null || valor.length == 0 || /^\s+$/.test(valor)) {
+                alert('[ERROR] El campo debe tener un valor ');
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form action="" method="" id="" name="form1" onsubmit="return validacion()">
+        Ingrese su nombre:<input type="text" name="nombre"><br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+
+</html>

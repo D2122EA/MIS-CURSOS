@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ingresar=prompt("Ingrese un string",);
+        /*Al lenght debemos restarle -1 porque sino estaria fuera de rango porque el string 
+        comienza desde cero */
+        var mitad = ingresar.length/2;
+        var mitadprint =ingresar.substring(0,mitad);
+        var ultimo = ingresar.length-1;
+        var ultimoprint = ingresar.charAt(ultimo);
+        var inversa = new Array(ingresar.length);
+        var inversaprint = "";
+        for(x=0;x<ingresar.length;x++){
+            inversa[x]= ingresar.length-1-x;
+            inversaprint=inversaprint+ingresar.charAt(inversa[x]);
+        }
+        var guionprint = "";
+        for(x=0;x<ingresar.length;x++){
+            if(x==0){
+                guionprint=guionprint+ingresar.charAt(x);
+            }
+            else{
+                guionprint=guionprint+"-"+ingresar.charAt(x);
+            }
+        }
+        document.write("La mitad de el string es: "+mitadprint);
+        document.write("<br>El ultimo caracter del string es: "+ultimoprint);
+        document.write("<br>La inversa es:"+inversaprint);
+        document.write("<br>Los caracteres escritos separados por guiones: "+guionprint);
+    </script>    
+</body>
+</html>

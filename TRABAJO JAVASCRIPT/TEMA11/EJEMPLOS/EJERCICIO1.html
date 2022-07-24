@@ -1,0 +1,53 @@
+<HTML>
+
+<HEAD>
+    <SCRIPT LANGUAGE="JavaScript">
+        function cerrar() {
+            close(); /* podemos escribir window.close(). Al fin al cabo
+           el objeto window es el objeto de máximo nivel.*/
+        }
+        function abrir() {
+            var ventana = open();
+            ventana.document.write("Segunda linea");
+        }
+        function abrirParametros() {
+            var ventana = open('', '', 'status=yes,width=400,height=250,menubar=yes');
+            ventana.document.write("Esto es lo primero que aparece<br>");
+        }
+        function mostrarAlerta() {
+            alert("Esta ventana de alerta ya la utilizamos en otros problemas.");
+        }
+        function confirmar() {
+            var respuesta = confirm("Presione alguno de los dos botones");
+            if (respuesta == true)
+                alert("presionó aceptar");
+            else
+                alert("presionó cancelar");
+        }
+        function cargarCadena() {
+            var cad = prompt("cargue una cadena:", "");
+            alert("Usted ingreso " + cad);
+        }
+    </SCRIPT>
+    <title>Steve-Jobs - Arequipa</title>
+</HEAD>
+
+<BODY>
+    Este programa permite analizar la llamada a distintas responsabilidades del
+    objeto window.<br>
+    <FORM>
+        <input type="button" value="close()" onClick="cerrar()">
+        <br><br>
+        <input type="button" value="open()" onClick="abrir()">
+        <br><br>
+        <input type="button" value="open con parámetros" onClick="abrirParametros()">
+        <br><br>
+        <input type="button" value="alert" onClick="mostrarAlerta()">
+        <br><br>
+        <input type="button" value="confirm" onClick="confirmar()">
+        <br><br>
+        <input type="button" value="prompt" onClick="cargarCadena()">
+    </FORM>
+</BODY>
+
+</HTML>

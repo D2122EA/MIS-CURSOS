@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nombre = prompt("Indique su nombre: ",);
+        var total = prompt("Indique el total de preguntas contestadas:");
+        var correctas = prompt("Indique el total de preguntas correctas contestadas",);
+        var nivel = correctas/total;
+        document.write("Datos del postulante");
+        document.write("<br> NOMBRE: ",nombre);
+        document.write("<br> PREGUNTAS CONTESTADAS: ",total);
+        document.write("<br> PREGUNTAS CONTESTADAS CORRECTAMENTE: ",correctas);
+        if(nivel>=0.9){
+            document.write("<br> NIVEL:Nivel superior")
+        }
+        else{
+            if(nivel>=0.75){
+                document.write("<br> NIVEL:Nivel medio")
+            }
+            else{
+                if(nivel>=0.5){
+                    document.write("<br> NIVEL:Nivel regular")
+                }
+                else{
+                    document.write("<br> NIVEL:Fuera de nivel")
+                }
+            }
+        }
+    </script>
+</body>
+</html>

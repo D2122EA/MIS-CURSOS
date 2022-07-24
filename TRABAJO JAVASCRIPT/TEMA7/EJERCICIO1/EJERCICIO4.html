@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       var asignar = new Array(26);
+       asignar[0]='a';    
+       asignar[1]='b';    
+       asignar[2]='c';    
+       asignar[3]='d';    
+       asignar[4]='e';    
+       asignar[5]='f';    
+       asignar[6]='g';    
+       asignar[7]='h';    
+       asignar[8]='i';    
+       asignar[9]='j';    
+       asignar[10]='k';    
+       asignar[11]='l';    
+       asignar[12]='m';    
+       asignar[13]='n';    
+       asignar[14]='o';    
+       asignar[15]='p';    
+       asignar[16]='q';    
+       asignar[17]='r';    
+       asignar[18]='s';    
+       asignar[19]='t';    
+       asignar[20]='u';    
+       asignar[21]='v';    
+       asignar[22]='w';    
+       asignar[23]='x';    
+       asignar[24]='y';    
+       asignar[25]='z';    
+       var x;
+       var contador ="";
+       for(x=0;x<4;x++){
+        var numerorand = parseInt(Math.random()*100)+1;
+        if(numerorand>=0&&numerorand<=25){
+            contador = contador+asignar[numerorand];
+            if(x==3){
+                var final=contador+"@gmail.com";
+            }
+        }
+        else{
+            x=x-1;
+
+        }
+       }
+
+       function verificar(final){
+        if(final.indexOf('@')){
+            return "Contiene arroba";
+        }
+        else{
+            return "No contiene arroba";
+        }
+       }
+       document.write("EMAIL: "+final);
+       document.write("<br>"+verificar(final));
+    </script>
+</body>
+</html>

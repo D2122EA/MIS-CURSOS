@@ -1,0 +1,25 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <script language="JavaScript">
+        function mostrarSeleccionado() {
+            if (document.form1.mayor[0].checked)
+                alert('Usted es mayor de 18');
+            if (document.form1.mayor[1].checked)
+                alert('Usted no es mayor de 18');
+        }
+    </script>
+    <form name="form1">
+        USTED ES MAYOR DE 18?</br>
+        <input type="radio" name="mayor">Soy mayor de 18
+        <br>
+        <input type="radio" name="mayor">No soy mayor 
+        <br>
+        <input type="button" value="Mostrar" onClick="mostrarSeleccionado()">
+    </form>
+</body>
+
+</html>

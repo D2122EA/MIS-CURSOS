@@ -1,0 +1,29 @@
+<HTML>
+
+<HEAD>
+</HEAD>
+
+<BODY>
+    <SCRIPT LANGUAGE="JavaScript">
+        function validar() {
+            var c = 0;
+            var i = 0;
+            for (i = 0; i < document.form1.elements.length; i++) {
+                if (document.form1.elements[i].checked) {
+                    c++;
+                }
+            }
+            if (c == 0) {
+                alert("Debe activar al menos un checkbox");
+            }
+        }
+    </SCRIPT>
+    <FORM name="form1">
+        <INPUT TYPE="checkbox" value="azul">Azul<br>
+        <INPUT TYPE="checkbox" value="rojo">Rojo<br>
+        <INPUT TYPE="checkbox" value="verde">Verde<br>
+        <INPUT TYPE="submit" VALUE="Enviar" ONCLICK="validar()">
+    </FORM>
+</BODY>
+
+</HTML>

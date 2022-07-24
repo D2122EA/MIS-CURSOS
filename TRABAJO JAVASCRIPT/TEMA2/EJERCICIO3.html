@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var numero1 = prompt("Indique el numero1: ",);
+        var numero2 = prompt("Indique el numero2: ",);
+        if(numero1>numero2){
+            var suma = parseInt(numero1)+parseInt(numero2);
+            var resta = numero1 - numero2;
+            document.write("suma: ",suma);
+            document.write("<br> resta: ",resta);
+        }
+        else{
+            var producto = numero1 * numero2;
+            var division = numero1 / numero2;
+            document.write("producto: ",producto);
+            document.write("<br> division: ",division);
+        }
+    </script>
+</body>
+</html>

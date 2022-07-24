@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script language="JavaScript">
+        function concatenar() {
+            var nom = document.formulario.apellido.value;
+            var nom1 = document.formulario.apellido1.value;
+                alert(nom+" "+nom1);
+        }
+    </script>
+    <form name="formulario">
+        Ingrese su nombre:
+        <input type="text" name="apellido"><br>
+        Ingrese su apellido:
+        <input type="text" name="apellido1"><br>
+        <input type="button" value="Enviar" onClick="concatenar()">
+    </form>
+</body>
+
+</html>

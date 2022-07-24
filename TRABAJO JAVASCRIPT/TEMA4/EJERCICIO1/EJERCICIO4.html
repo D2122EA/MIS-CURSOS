@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var numdoc;
+        var hombre=0;
+        var condicion=0;
+        var edad;
+        var sexo;
+        var total=0;
+        var mujer=0;
+        do {
+            numdoc = prompt("Indique su numero de documento", );
+            if (numdoc !=0) {
+                edad = prompt("Indique su edad: ", );
+                sexo = prompt("Seleccione su sexo: ", );
+                total = total + 1;
+                if (sexo==='hombre') {
+                    hombre = hombre + 1;
+                }
+                else {
+                    if(sexo==="mujer"){
+                    mujer = mujer + 1;
+                    if (edad > 16 && edad < 65) {
+                        condicion = condicion + 1;
+                    }
+                }
+                }
+            }
+        } while (numdoc != 0);
+        document.write("<br>El numero de personas censadas: ", total);
+        document.write("<br>El numero de personas hombres: ", hombre);
+        document.write("<br>El numero de personas mujeres: ", mujer);
+        document.write("<br>El numero de personas hombres mayores de 16 y menores de 65: ", condicion); 
+    </script>
+</body>
+</html>

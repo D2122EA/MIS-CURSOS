@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var contador = 0;
+        var x;
+        var y=0;
+        for (x = 0; x < 3; x++) {
+            var altura = prompt("Indique su altura",);
+            var base = prompt("Indique su base",);
+            y=y+1; /* Hay momento donde el live server de vscode se buguea y 
+            manda error lo que no es. Por ejemplo, cuando declare y como 1 me enviaba
+            NaN como si hubriera erro y no los numeros que valian y*/ 
+            var superficie = (altura * base) / 2;
+            document.write("<br>TRIANGULO NUMERO: ",y);
+            document.write("<br>Su altura es:", altura);
+            document.write("<br>Su base es:", base);
+            document.write("<br>Su superficie es:", superficie);
+            if (superficie<12) {
+                contador=contador+1;
+            }
+        }
+        document.write("<br>Los triangulos con las superficies menor a 12 son: ",contador);
+
+    </script>
+</body>
+
+</html>

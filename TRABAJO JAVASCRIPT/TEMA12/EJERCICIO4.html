@@ -1,0 +1,22 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <script type="text/javascript">
+        function pasarenfoque() {
+            document.form1.nombre.focus();
+        }
+    </script>
+</head>
+
+<body>
+    <form name="form1">
+        Ingrese su nombre:<input type="text" name="nombre"><br>
+        Ingrese su apellido:<input type="text" name="apellido"><br>
+        Ingrese su edad:<input type="text" name="edad"><br>
+    </form>
+    <input type="submit" value="Pasar el enfoque" onclick="pasarenfoque()">
+</body>
+
+</html>

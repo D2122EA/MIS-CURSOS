@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script language="JavaScript">
+        function mostrar() {
+            var nom = document.formulario.nombre.value;
+            var cubo = nom*nom*nom;
+            alert('El valor elevado al cubo  es: ' + cubo);
+        }
+    </script>
+    <form name="formulario">
+        Ingrese su valor:
+        <input type="text" name="nombre"><br>
+        <input type="button" value="Enviar" onClick="mostrar()">
+    </form>
+</body>
+
+</html>
