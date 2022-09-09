@@ -273,7 +273,7 @@ Proporciona energia
         
         - Mas resistencia
         
-    **LA RESISTIVIDAD ($ \rho $)**            
+    **LA RESISTIVIDAD ( $\rho$ )**            
         
     - Mide la dificultad que presenta una sustancia para conducir la corriente electrica. 
         
@@ -281,11 +281,11 @@ Proporciona energia
         
         Donde 
         
-        $ \rho _0 $ : Resistividad a 0°C
+        $\rho _0$ : Resistividad a 0°C
 
-        $ \alpha  $ : Coficiente propio de cada material 
+        $\alpha$ : Coficiente propio de cada material 
 
-        $ \Delta T $ : Diferencia de temperatura con respecto a 0°C 
+        $\Delta T$ : Diferencia de temperatura con respecto a 0°C 
      
     **FACTORES QUE DEPENDE LA RESISTENCIA**
     
