@@ -166,6 +166,7 @@ Proporciona energia
         - **Comunicacion con los componentes electronicos**
             - Para que se comunique un microcontrolador con un componente electronico existen 2 formas
                 - **Comunicacion serie**
+                ![Number-7](7.jpeg)
                     - Los bits son trasmitidos de uno a uno
                     - Existe un unico canal de trasmision
                     - Arduino emplea esta forma de comunicacion
@@ -191,14 +192,15 @@ Proporciona energia
                             ![Untitled5](Untitled5.png)
                             
                             - Serial Peripheal Interface es u protocolo sincrono de trasmision que utiliza 4 cables para la comunicacion
-                                - **SCK:**Envia senales de reloj
-                                - **SS:**Indica el esclavo destino(solo puede indicar uno)
-                                - **MOSI:**Envia datos al esclavo
-                                - **MISO:**Envia datos del esclavo al maestro
+                                - **SCK:** Envia senales de reloj
+                                - **SS:** Indica el esclavo destino(solo puede indicar uno)
+                                - **MOSI:** Envia datos al esclavo
+                                - **MISO:** Envia datos del esclavo al maestro
                             - Tiene full duplex que basicamente consiste en la trasmision simultania, es deir en ambos sentidos
                             - La principal ventaja a diferencia de el I2C es que este es mas rapido y eficiente en terminos de energia pero en consecuencia se necesita mas pines E/S para comunicarses ya que el numero de lineas SS depende del numero de elementos que haya en el circuito
                         
                 - **Comunicacion paralelo**
+                ![Number-8](8.jpeg)
                     - Los bits son trasmitidos de forma sincronizada y simultanea
                     - Existen varios canales de trasmision
 
@@ -270,10 +272,28 @@ Proporciona energia
         **Material aislante**
         
         - Mas resistencia
-    
+        
+    **LA RESISTIVIDAD ($ \rho $)**            
+        
+    - Mide la dificultad que presenta una sustancia para conducir la corriente electrica. 
+        
+        $$ \rho = \rho _0 (1+\alpha \Delta T) $$ 
+        
+        Donde 
+        
+        $ \rho _0 $ : Resistividad a 0°C
+
+        $ \alpha  $ : Coficiente propio de cada material 
+
+        $ \Delta T $ : Diferencia de temperatura con respecto a 0°C 
+     
     **FACTORES QUE DEPENDE LA RESISTENCIA**
     
     - Tipo de material
     - Temperatura / Resistencia
     - Longuitud del material Superficie
     - Seccion Resistencia
+
+    **POTENCIA**
+    
+    - Es la energia electrica consumida (E)  en una unidad de tiempo (T)
