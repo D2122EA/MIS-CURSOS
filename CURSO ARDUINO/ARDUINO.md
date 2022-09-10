@@ -297,3 +297,6 @@ Proporciona energia
     **POTENCIA**
     
     - Es la energia electrica consumida (E)  en una unidad de tiempo (T)
+
+    $$ P=E/t $$
+    
