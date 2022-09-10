@@ -299,4 +299,65 @@ Proporciona energia
     - Es la energia electrica consumida (E)  en una unidad de tiempo (T)
 
     $$ P=E/t $$
+    $$ P=I.V $$
+
+    ## 💙 ***LEY DE OHM***
+
+    $$ V=  I.R $$
+
+    ## 💙 ***CORRIENTES***
+    **CORRIENTE CONTINUA**
     
+    - Los electrones circuilan siempre en el mismo sentido mantenitendo su polaridad
+
+    **CORRIENTE ALTERNA**
+    - Los electrones se mueven alternativamente entre el polo positivo y negativo. 
+    - Ocurre tantas veces como frecuencia en herts (Hz) tenga esa corriente
+    - Se caracteriza por ser una corriente facilmente transportada a grandes distancias y llega a nuestros enchufes a travez de la red
+    - Mediante transformadores la corriente alterna sera transformada en corriente continua 
+
+    ![Corriente alterna y continua](CORRIENTE.jpeg)
+
+    ## 💙 ***CIRCUITOS ELECTRICOS***
+
+    - Dispositivos unidos por un material conductor en donde circula corriente electrica. 
+    - Los componentes de los dispositivos son representados por una simbologia universal 
+    - Estan formados por: 
+        - **PILAS**
+        - **RESISNTENCIAS**
+        - **DISPOSITIVOS DE CONTROL** Abren o cierran el circuito electrico
+        - **RECEPTOR** Recibe la corriente electrica
+
+    ### TIPOS DE CONEXIONES
+    #### CONEXION EN SERIE
+    - Cuando los dispositivos estan conectados uno a continuacion de otro
+    $$ I_T = I_1 = I_2 =...=I $$
+    $$ V_T = V_1 + V_2 + ... + V_n $$
+    #### CONEXION EN PARALELO
+    - Los dispositivos se conectan uniendo todas las entradas por un lado y todas las salidas por otro 
+    $$ V_T = V_1 = V_2 =...=V_n $$
+    $$ I_T = I_1 + I_2 + ... + I_n $$   
+    #### CONEXION EN MIXTO 
+    - Presenta tanto conexiones en serie como en paralelo 
+    - El circuito tendra mas de dos dispositivos
+
+    ### LEY DE KIRCHHOFF
+    - Son 2 reglas para complementar la ley de Ohm 
+    - Hay que entender los siguiente
+        - **NUDO** Punto del circuito en el cual se unen dos o mas elementos 
+        - **MALLA** Circuito que puede recorrerse sin pasar dos veces por el mismo punto 
+        - **RAMA** Conjunto de elementos conectados entre dos nudos  
+      
+    ![NODO](nodo.jpg)  
+      
+    [LEY DE KIRCHHOFF](https://www.youtube.com/watch?v=m9XVO983_Vg)
+
+     ## 💙 ***COMPONENTES ELECTRONICOS***
+     ### PILA
+     - Genera una diferencia de potencial 
+     - Para alimentar a una placa arduino el regulador necesita un voltaje minimo de 6.5V-7V para proporcionar  5V
+     ### DIODO
+     #### SEMICONDUCTOR
+     - Material que se comporta como un conductor(conduce corriente electrica) y otras veces como aislante(no conduce corriente electrica)
+     #### IONIZACION 
+     - Cuando un atomo pierde equilibrio de cargas por el movimiento de un electron de su respectiva capa(mayormente sucede en la ultima capa o orbita), pasando a tener mas carga positiva que negativa, convirtiendose en un ion positivo o cation
