@@ -1,4 +1,4 @@
-# 💙 **ARDUINO TEORY HARDWARE**
+# 💙 **ARDUINO EORY HARDWARE**
 
 ## 💙 ***Que es un sistema electronico?***
 
