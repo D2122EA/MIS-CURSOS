@@ -1,4 +1,4 @@
-# 💙 **HARDWARE: LA PLACA ARDUINO**
+# 💙 **ARDUINO TEORY HARDWARE**
 
 ## 💙 ***Que es un sistema electronico?***
 
