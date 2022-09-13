@@ -360,4 +360,37 @@ Proporciona energia
      #### SEMICONDUCTOR
      - Material que se comporta como un conductor(conduce corriente electrica) y otras veces como aislante(no conduce corriente electrica)
      #### IONIZACION 
-     - Cuando un atomo pierde equilibrio de cargas por el movimiento de un electron de su respectiva capa(mayormente sucede en la ultima capa o orbita), pasando a tener mas carga positiva que negativa, convirtiendose en un ion positivo o cation
+     - Cuando un atomo pierde equilibrio de cargas por el movimiento de un electron de su respectiva capa(mayormente sucede en la ultima capa o orbita), pasando a tener mas carga positiva que negativa, convirtiendose en un ion positivo o cation. De forma inversa seria un ion negativo o anion
+     - Los semiconductores, los atomos estan compartiendo los electrones de su ultima capa de 2 en 2. Uno del par sera arrancado y se rompera el enlace
+     #### DIODO 
+     - Es un semiconductor que actuara como conductor en un sentido en determinadas condiciones 
+    ![Diodo conexion](diodo.jpg)
+    ![Diodo conexion2](diodo2.jpg)
+    
+    |Tipo N | Tipo P   |
+    |---|---|
+    |Silicio o Germanio: Ambos 5 electrones ultima capa de impurezas donde 4 enlaces(2 electrones por cada enlace) y el restante electron libre   | 3 electrones ultima capa de impurezas donde 3 enlaces(2 electrones por cada enlace) deja restante un huco para ser ocupado  |
+
+    #### DIODO LED 
+    - Emite luz por el paso de corriente electrica
+    - Valores entorno 2V para mas resistencia 
+    - Ahorra mas energia que un foco convencional(20% bombilla y 80% el led)
+    - Se puede conectar en un pin digital como analogico
+    ![Diodo led](https://i0.wp.com/www.tuelectronica.es/images/tutoriales/electronica/conectar_led/conectar_led_04.gif)
+    
+    #### LED RGB 
+    - Son 3 led en un encapsulado comun(intensidad no superior a $20mA$)
+        - El led rojo requiere 2.1 V
+        - El led verde y azul requiere 3.3 V
+    - Pueden ser anodo comun o catodo comun
+    ![Diodo rgb](https://3.bp.blogspot.com/-e1MHikKHD1s/V4FFs2n9gDI/AAAAAAAADmQ/L2NyiaDXD5ItCUtX2q4ulOYmLX5ArZrXgCLcB/s1600/diodo%2BRGB%2B3.PNG)
+
+    ### RESISTENCIA 
+    - Se opone al paso de la corriente 
+    - La tolerancia es la precion del valor de la resistencia
+        - Cuanto menor sea la tolerancia mas preciso sra el valor de la resistencia
+    ![Resistencia](https://electronicaonline.net/wp-content/uploads/2021/05/tabla-de-colores-de-resistencias.jpg)
+
+    ### POTENCIOMETRO
+    - Resistencia variable
+    
