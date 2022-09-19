@@ -275,3 +275,350 @@ mail($para, $titulo, $mensaje, $cabeceras);
 https://computerhoy.com/noticias/internet/que-es-copia-oculta-bcc-cco-correos-electronicos-76411
 
 # TEMA 3
+- Si quiero imprimir una variable que cree en una pagina en otra no se va a poder.       EJEMPLO 
+    - Pagina 1
+    ```php
+    <?php
+    $name = 'Hello'
+    ?>
+    
+    ```
+    - Pagina 2
+    ```php
+    <?php
+    echo $name
+    ?>
+    
+    ```
+- Nos muestra el siguiente error
+![variable](variable.png)
+- Para solucionar esto usamos ``session_start()``
+    -  Analizemos el siguiente codigo
+    ```php
+    <?php
+    session_start();
+    $_SESSION['nombres'] = "Carlos Alberto";
+    $_SESSION['apellidos'] = "Aguilar Pinto";
+    $_SESSION['lugarestudios'] = "UNSA"; 
+    echo "<h1>Pagina1</h1>";
+    echo $_SESSION['nombres']."<br>"; 
+    echo $_SESSION['apellidos']."<br>";
+    ?>
+    ```
+    - En este caso estamos compartiendo la variable nombre, apellidos y lugares de estudio  
+    - Ahora podemos usar esas variables en otra pagina
+    ```php 
+    <?php
+    session_start();
+    echo "<h1>Pagina2</h1>";
+    echo $_SESSION['nombres']."<br>"; 
+    echo $_SESSION['apellidos']."<br>";
+    echo $_SESSION['lugarestudios']."<br>";
+    ?> 
+    ``` 
+    - Estas variables se crean del lado del cliente
+## PROYECTO 1
+- Vamos a crear un contador que cuente cuantas veces ingresamos a distintas paginas 
+    - Pagina 1
+    ```php
+    <?php
+    session_start();
+    //Estamos comprobando si la variable existe
+    if (!isset($_SESSION['cuenta_paginas'])) {
+    $_SESSION['cuenta_paginas'] = 1;
+    } else {
+    $_SESSION['cuenta_paginas']++;
+    }
+    ?>
+    <html>
+    <head>
+    <title>Contar paginas visitadas</title>
+    </head>
+    <body>
+    <?php
+    echo "Desde que entraste has visto ".$_SESSION['cuenta_paginas']." páginas<br>";
+    ?>
+    <a href="Page2.php">Ver página 1</a><br>
+    <a href="Page3.php">Ver página 2</a><br>
+    <a href="Page4.php">Ver página 3</a><br>
+    </body>
+    </html>
+    ```
+    - Pagina 2
+    ```php
+    <?php
+    session_start();
+    if (!isset($_SESSION['cuenta_paginas'])) {
+    $_SESSION['cuenta_paginas'] = 1;
+    } else {
+    $_SESSION['cuenta_paginas']++;
+    }
+    ?>
+    <html>
+    <head>
+    <title>Otra página</title>
+    </head>
+    <body>
+    <h1>ESTA ES OTRA PAGINA</h1>
+    <?php
+    echo "Desde que entraste has visto ".$_SESSION['cuenta_paginas']." páginas<br>";
+    ?>
+    <br><br>
+    <a href="Page1.php">Volver</a>
+    </body>
+    </html>
+    ```
+    - Pagina 3
+    ```php
+    <?php
+    session_start();
+    if (!isset($_SESSION['cuenta_paginas'])) {
+    $_SESSION['cuenta_paginas'] = 1;
+    } else {
+    $_SESSION['cuenta_paginas']++;
+    }
+    ?>
+    <html>
+    <head>
+    <title>Pagina 2</title>
+    </head>
+    <body>
+    <h1>ESTA ES LA PAGINA 2</h1>
+    <?php
+    echo "Desde que has entrado has visto ".$_SESSION['cuenta_paginas']." páginas<br>";
+    ?>
+    <br><br>
+    <a href="Page1.php">Volver</a>
+    </body>
+    </html>
+    ```
+    - Pagina 4
+    ```php
+    <?php
+    session_start();
+    if (!isset($_SESSION['cuenta_paginas'])) {
+    $_SESSION['cuenta_paginas'] = 1;
+    } else {
+    $_SESSION['cuenta_paginas']++;
+    }
+    ?>
+    <html>
+    <head>
+    <title>Página 3</title>
+    </head>
+    <body>
+    <h1>ESTA ES LA PAGINA 3</h1>
+    <?php
+    echo "Desde que has entrado has visto ".$_SESSION['cuenta_paginas']." páginas<br>";
+    ?>
+    <br><br>
+    <a href="principal.php">Volver</a>
+    </body>
+    </html>
+    ```
+## PROYECTO 2 
+- Consistira en crear los siguientes links
+    - Loguear: nos mostrara un formulario de acceso con un usuario y contraseña con los cuales podremos ver el contenido de las otras tres páginas.
+    - Ir a página 1: contenido html.
+    - Ir a página 2
+    - Ir a página 3
+    - Salir: una página que realizará la acción de cerrar sesión y ya no tener acceso a lasdemás páginas, solo si se vuelve a loguear
+- Creando el archivo que contendra los links 
+```php
+<html>
+<head>
+<title>Sesion 15 - Ejercicio 2</title>
+</head>
+<body>
+<h1>Curso de PHP y MySQL</h1>
+<h2>Librerias en PHP</h2><br>
+<a href="loguear.php">Loguear</a><br>
+<a href="pagina1.php">Ir a la pagina1</a><br>
+<a href="pagina2.php">Ir a la pagina2</a><br>
+<a href="pagina3.php">Ir a la pagina3</a><br>
+<a href="salir.php">Salir</a><br>
+</body>
+</html>
+```   
+- Creando el archivo pagina 1
+```php
+<?php
+session_start();
+?>
+<html>
+<head>
+<title>Pagina 1</title>
+</head>
+<body>
+//Podemos entrecortar la abertura y cierre de un ciclo (if ($_SESSION["acceso"] == 1))
+<?php
+if ($_SESSION["acceso"] == 1) {
+?>
+Esta es la pagina 1<br> 
+11111111111111111111111111111111111111111<br>
+11111111111111111111111111111111111111111<br>
+11111111111111111111111111111111111111111<br>
+11111111111111111111111111111111111111111<br>
+<br>
+<hr>
+<?php
+} else {
+echo "usted no tiene permisos para ver esta pagina<br>";
+}
+?>
+<a href="index.php">Volver</a><br>
+</body>
+</html>
+```
+- Creando el archivo pagina 2
+```php
+<?php
+session_start();
+?>
+<html>
+<head>
+<title>Pagina 2</title>
+</head>
+<body>
+<?php
+if ($_SESSION["acceso"] == 1) {
+?>
+Esta es la pagina 2<br> 
+22222222222222222222222222222222222222222<br>
+22222222222222222222222222222222222222222<br>
+22222222222222222222222222222222222222222<br>
+22222222222222222222222222222222222222222<br>
+<br>
+<hr>
+<?php
+} else {
+echo "usted no tiene permisos para ver esta pagina<br>";
+}
+?>
+<a href="index.php">Volver</a><br>
+</body>
+</html>
+
+```
+- Creando el archivo pagina 3
+```php
+<?php
+session_start();
+?>
+<html>
+<head>
+<title>Pagina 3</title>
+</head>
+<body>
+<?php
+if ($_SESSION["acceso"] == 1) {
+?>
+Esta es la pagina 3<br> 
+33333333333333333333333333333333333333333<br>
+33333333333333333333333333333333333333333<br>
+33333333333333333333333333333333333333333<br>
+33333333333333333333333333333333333333333<br>
+<br>
+<hr>
+<?php
+} else {
+echo "usted no tiene permisos para ver esta pagina<br>";
+}
+?>
+<a href="index.php">Volver</a><br>
+</body>
+</html>
+```
+- Creando el archivo login
+    - Login formulario
+    ```php 
+    <html>
+    <body>
+    <h1>Loguear</h1>
+    <form method="post" action="loguear2.php" name="form1"> 
+    Usuario: <input type="text" name="usuario"><br> 
+    Contraseña: <input type="password" name="password"><br>
+    <input type="submit" name="submit" value="Enviar"><br>
+    </form>
+    <br><a href="index.php">Volver</a><br>
+    </body>
+    </html>
+    ```
+    - Login verificacion
+    ```php
+    <?php
+    session_start();
+    $a = $_POST['usuario'];
+    $b = $_POST['password'];
+    if($a == "hello" && $b == "world") {
+    echo "Bienvenido - Usted se ha registrado correctamente<br>";
+    $_SESSION["acceso"] = 1;
+    }
+    else {
+    $_SESSION["acceso"] = 0;
+    echo "Alguno de los datos ingresados es incorrecto - vuelva a intentar<br>";
+    }
+    ?>
+    <br><a href="index.php">Volver</a><br>
+    ```
+- Creando el archivo cerrar sesion
+    ```php
+    <?php
+    session_start();
+    //unset($_SESSION['acceso']); 
+    session_destroy();
+    echo "Su sesion finalizo con exito<br>";
+    ?>
+    <a href="index.php">Volver</a><br>
+    ```
+    - ``session_destroy`` Eliminamos todas las variables al mismo tiempo. En cambio, ``unset`` solo la variable que definamos 
+# TEMA 4 - CONECTAR MYSQL CON PHP
+## PROYECTO1 
+1. Creando la base de datos
+![base](base.png)
+2. Creando un login
+```html
+<html>
+<head>
+<title>Problema</title>
+</head>
+<body>
+<h1>Alta de Alumnos</h1>
+<form action="pagina2.php" method="post"> 
+Ingrese nombre:
+<input type="text" name="nombre"><br> 
+Ingrese mail:
+<input type="text" name="mail"><br> 
+Seleccione el curso:
+<select name="codigocurso">
+<option value="1">PHP</option>
+<option value="2">ASP</option>
+<option value="3">JSP</option>
+</select>
+<br>
+<input type="submit" value="Registrar">
+</form>
+</body>
+</html>
+```
+3. Creando la conexion mysql-php
+```php
+<html>
+<head>
+<title>Problema</title>
+</head>
+<body>
+<?php
+$conexion=mysql_connect("localhost","root","") 
+or die("Problemas en la conexion"); 
+mysql_select_db("base1",$conexion) or
+die("Problemas en la seleccion de la base de datos"); 
+mysql_query("insert into alumnos(nombre,mail,codigocurso) values
+('$_REQUEST[nombre]','$_REQUEST[mail]',$_REQUEST[codigocurso])",
+$conexion) or die("Problemas en el select".mysql_error()); 
+mysql_close($conexion);
+echo "El alumno fue dado de alta.";
+?>
+</body>
+</html>
+```
