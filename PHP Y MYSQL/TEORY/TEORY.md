@@ -1,4 +1,4 @@
-# TEMA 1
+# TEMA 1 - SUBIR ARCHIVOS AL SERVIDOR
 ## PROYECTO1: SUBIR ARCHIVOS AL SERVIDOR
 1. Creando formulario
 ```html
@@ -183,7 +183,7 @@ echo "<br>Se permiten archivos de 100 Kb máximo.";
 
 </html>
 ```
-# TEMA 2
+# TEMA 2 - FUNCION MAIL
 ## MAIL()
 - Es una funcion que nos permite enviar correos 
 - Es necesario un servidor smtp para que funcione correctamente 
@@ -274,7 +274,7 @@ mail($para, $titulo, $mensaje, $cabeceras);
 >BBC es copia oculta; es decir, que el destinatario no va a saber a quien mas se ha enviado el correo que recibio
 https://computerhoy.com/noticias/internet/que-es-copia-oculta-bcc-cco-correos-electronicos-76411
 
-# TEMA 3
+# TEMA 3 - VARIABLES DE SESION
 - Si quiero imprimir una variable que cree en una pagina en otra no se va a poder.       EJEMPLO 
     - Pagina 1
     ```php
@@ -609,16 +609,203 @@ Seleccione el curso:
 </head>
 <body>
 <?php
-$conexion=mysql_connect("localhost","root","") 
+/* Se iba a usar este
+$conexion=mysql_connect("localhost","root","")
+- Pero mysql_connect esta obsoleto. Usaremos mysqli en reemplazo  
+*/
+$conexion= new mysqli("127.0.0.1","root","") 
 or die("Problemas en la conexion"); 
-mysql_select_db("base1",$conexion) or
+mysqli_select_db($conexion,"base1") or
 die("Problemas en la seleccion de la base de datos"); 
-mysql_query("insert into alumnos(nombre,mail,codigocurso) values
-('$_REQUEST[nombre]','$_REQUEST[mail]',$_REQUEST[codigocurso])",
-$conexion) or die("Problemas en el select".mysql_error()); 
-mysql_close($conexion);
+mysqli_query($conexion,"insert into alumnos(nombre,mail,codigocurso) values
+('$_REQUEST[nombre]','$_REQUEST[mail]',$_REQUEST[codigocurso])"
+) or die("Problemas en el select".mysqli_connect_error()); 
+mysqli_close($conexion);
 echo "El alumno fue dado de alta.";
 ?>
 </body>
 </html>
 ```
+| **ANTIGUO** | **NUEVO** | 
+|-----------|-----------|
+|     [Mysql_connect](https://www.php.net/manual/en/function.mysql-connect.php)    | [Mysqli_connect](https://www.php.net/manual/en/function.mysqli-connect.php)   |     
+|    [Mysql_select_db](https://www.php.net/manual/en/function.mysql-select-db.php)  |   [Mysqli_select_db](https://www.php.net/manual/en/mysqli.select-db.php)       |     
+ |     [Mysql_query](https://www.php.net/manual/en/function.mysql-query.php)     |  [Mysqli_query](https://www.php.net/manual/es/mysqli.error.php)  -   [Mysqli_query](https://www.w3schools.com/php/func_mysqli_query.asp)    |      
+ |      [Mysql_error](https://www.php.net/manual/es/function.mysql-error.php)    | [Mysqli_error](https://www.php.net/manual/es/mysqli.error.php)     |      
+
+> https://es.stackoverflow.com/questions/100239/por-qu%C3%A9-me-sale-el-error-call-to-undefined-function-mysql-connect
+
+- Error root
+>https://phoenixnap.com/kb/access-denied-for-user-root-localhost
+
+- Cambiar contrasena de usuario root
+>https://youtu.be/W-Nis1dTVk4?t=251
+
+## PROYECTO 2: LISTADO(SELECCION DE REGISTROS DE UNA TABLA)
+1. Aplicamos recopilacion de informacion del proyecto anterior
+2. Creamos el sistema de recoleccion
+```php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<?php
+$conexion=new mysqli("127.0.0.1","root","") 
+or die("Problemas en la conexion");
+mysqli_select_db($conexion,"base_curso")
+or die("Problemas en la selección de la base de datos");
+$registros=mysqli_query($conexion,"select codigo,nombre, mail, codigocurso 
+from alumnos") or
+die("Problemas en el select:".mysqli_connect_error());
+while ($reg=mysqli_fetch_array($registros))
+{
+echo "Codigo:".$reg['codigo']."<br>";
+echo "Nombre:".$reg['nombre']."<br>";
+echo "Mail:".$reg['mail']."<br>"; 
+echo "Curso:";
+switch ($reg['codigocurso']) { 
+case 1:echo "PHP";
+break;
+case 2:echo "ASP"; 
+break;
+case 3:echo "JSP"; 
+break;
+}
+echo "<br>"; 
+echo "<hr>";
+}
+mysqli_close($conexion);
+?>    
+</body>
+</html>
+```
+> Mysql fetch esta obsoleto
+> -  Esta función retorna un vector asociativo con los datos del registro rescatado, o 
+false en caso de no haber más registros. Es decir que si retorna un registro se almacena en el vector
+$reg y la condición del while se valida como verdadero y pasa a ejecutarse el bloque del while
+> REEMPLAZO
+https://www.php.net/manual/en/function.mysql-fetch-array.php
+> https://www.php.net/manual/en/mysqli-result.fetch-array.php
+
+![select](select.png)
+![base](base1.png)
+
+## PROYECTO 3: SELECCION DE REGISTROS DE UNA TABLA
+- El proyecto basicamente consiste en un buscador que buscara la informacion de estudiantes segun su correo electronico
+1. Hacemos el formulario
+``` html
+<html>
+<head>
+<title>Problema</title>
+</head>
+<body>
+<form action="pagina2.php" method="post"> 
+Ingrese el mail del alumno a consultar:
+<input type="text" name="mail">
+<br>
+<input type="submit" value="buscar">
+</form>
+</body>
+</html>
+```
+2. Hacemos el php del formulario
+```php
+<html>
+<head>
+<title>Problema</title>
+</head>
+<body>
+<?php
+$conexion=new mysqli("127.0.0.1","root","") 
+or die("Problemas en la conexion")
+mysqli_select_db($conexion,"base_curso") or 
+die("Problemas en la selección de la base de datos");
+$registros=mysqli_query($conexion,"select codigo,nombre, codigocurso
+from alumnos where mail='$_REQUEST[mail]'") or 
+die("Problemas en el select:".mysqli_connect_error());
+if ($reg=mysqli_fetch_array($registros))
+{
+echo "Nombre:".$reg['nombre']."<br>"; 
+echo "Curso:";
+switch ($reg['codigocurso']) { 
+case 1:echo "PHP";
+break;
+case 2:echo "ASP"; 
+break;
+case 3:echo "JSP"; 
+break;
+}
+}
+else
+{
+echo "No existe un alumno con ese mail.";
+}
+mysqli_close($conexion);
+?>
+</body>
+</html>
+```
+![buscador](buscador.png)
+
+## PROYECTO4: Borrar registros de una tabla 
+
+- Vamos a crear un formulario que al ingresar un correo, borraremos el registro del alumno que tenia dicho correo 
+
+1. Creamos el formulario 
+```html
+<html>
+<head>
+<title>Problema</title>
+</head>
+<body>
+<form action="pagina2.php" method="post"> 
+Ingrese el mail del alumno a borrar:
+<input type="text" name="mail">
+<br>
+<input type="submit" value="buscar">
+</form>
+</body>
+</html>
+```
+
+2. Creamos el php del formulario
+```php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<?php
+$conexion=new mysqli("127.0.0.1","root","") 
+or die("Problemas en la conexion");
+mysqli_select_db($conexion,'base_curso') or 
+die("Problemas en la selección de la base de datos");
+$registros=mysqli_query($conexion,"select codigo from alumnos
+where mail='$_REQUEST[mail]'") or 
+die("Problemas en el select:".mysqli_connect_error());
+if ($reg=mysqli_fetch_array($registros))
+{
+mysqli_query($conexion,"delete from alumnos where mail='$_REQUEST[mail]'") or 
+die("Problemas en el select:".mysqli_connect_error());
+echo "Se efectuó el borrado del alumno con dicho mail.";
+}
+else
+{
+echo "No existe un alumno con ese mail.";
+}
+mysqli_close($conexion);
+?>
+</body>
+</html>
+
+```
+# TEMA 5 - OPERACIONES CON REGISTROS
